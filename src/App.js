@@ -8,7 +8,7 @@ import './App.css';
 
 
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'; 
+
 import Chat from './components/Chat';
 
 firebase.initializeApp({
