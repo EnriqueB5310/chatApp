@@ -1,10 +1,13 @@
 import firebase from 'firebase/compat/app'
-import 'firebase/firestore'
-import 'firebase/auth'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
+
 
 import './App.css';
 import Chat from './components/Chat';
 import SignIn from './components/SignIn';
+import { useAuthState } from 'react-firebase-hooks/auth'
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyBHgm32C3AEXbOkkVbNKouAlYsIUcfR8V4",
@@ -20,11 +23,19 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
+  
+  const SignInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)
+  }
+  
+const [user] = useAuthState(auth)
+
+
   return (
-    <>
-    <SignIn />
-    <Chat />
-    </>
+    <div className='App'>
+  {user ? <Chat /> : <SignIn SignInWithGoogle={SignInWithGoogle} />}
+    </div>
   );
 }
 
