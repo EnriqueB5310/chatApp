@@ -44,7 +44,7 @@ function Chat({firestore, auth, firebase}) {
   
       <form onSubmit={sendMessage}>
   
-        <input className=" appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
+        <input className=" fixed bottom-0 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
   
         <button type="submit" disabled={!formValue}></button>
   
