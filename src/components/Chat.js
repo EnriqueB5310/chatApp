@@ -34,7 +34,7 @@ function Chat({firestore, auth, firebase}) {
     }
   
     return (<>
-      <main>
+      <main className='bg-green'>
   
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
@@ -44,9 +44,9 @@ function Chat({firestore, auth, firebase}) {
   
       <form onSubmit={sendMessage}>
   
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
   
-        <button type="submit" disabled={!formValue}>🕊️</button>
+        <button type="submit" disabled={!formValue}></button>
   
       </form>
     </>)
