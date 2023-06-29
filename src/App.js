@@ -31,7 +31,7 @@ const [user] = useAuthState(auth)
 
   return (
     <div className='App'>
-      <header className='bg-gray-200 '>
+      <header className='sticky top-0 bg-gray-200 '>
         <SignOut />
       </header>
   {user ? <Chat firebase={firebase} firestore={firestore} auth={auth}/> : <SignIn />}
