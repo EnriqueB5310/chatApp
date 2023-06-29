@@ -34,21 +34,22 @@ function Chat({firestore, auth, firebase}) {
     }
   
     return (<>
-      <main className='bg-green'>
+      <main className='bg-blue-50 min-h-screen'>
   
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
         <span ref={dummy}></span>
   
-      </main>
+      
   
       <form onSubmit={sendMessage}>
   
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
+        <input className=" appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
   
         <button type="submit" disabled={!formValue}></button>
   
       </form>
+      </main>
     </>)
   }
 

@@ -4,11 +4,11 @@ function ChatMessage(props) {
   
     const {text, uid, photoURL} = props.message;
     return (
-        <>
-<img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-<p>{text}</p>
+        <div className='flex '>
+<img className='object-scale-down h-8' src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+<p className='pl-3'>{text}</p>
 
-</>
+</div>
   )
 }
 

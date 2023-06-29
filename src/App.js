@@ -31,7 +31,7 @@ const [user] = useAuthState(auth)
 
   return (
     <div className='App'>
-      <header>
+      <header className='bg-gray-200 '>
         <SignOut />
       </header>
   {user ? <Chat firebase={firebase} firestore={firestore} auth={auth}/> : <SignIn />}
@@ -48,7 +48,7 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={signInWithGoogle}>Sign in with Google</button>
      
     </>
   )
@@ -57,7 +57,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
