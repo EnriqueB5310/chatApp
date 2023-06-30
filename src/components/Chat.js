@@ -10,7 +10,7 @@ import ChatMessage from './ChatMessage';
 function Chat({firestore, auth, firebase}) {
     const dummy = useRef();
     const messagesRef = firestore.collection('messages');
-    const query = messagesRef.orderBy('Created').limit(25);
+    const query = messagesRef.orderBy('Created').limit(5000);
   
     const [messages] = useCollectionData(query, { idField: 'id' });
   
@@ -34,17 +34,17 @@ function Chat({firestore, auth, firebase}) {
     }
   
     return (<>
-      <main className='bg-blue-50 min-h-screen'>
-  
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-  
+      <main className='bg-zinc-200 min-h-screen '>
+
+        {messages && messages.map(msg => <ChatMessage  key={msg.id} message={msg} />)}
+ 
         <span ref={dummy}></span>
-  
+
       
   
       <form onSubmit={sendMessage}>
   
-        <input className=" fixed bottom-0 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
+        <input className=" bg-gray-100 rounded-md placeholder-black fixed bottom-0 appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="chat" />
   
         <button type="submit" disabled={!formValue}></button>
   
