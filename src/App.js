@@ -31,9 +31,9 @@ const [user] = useAuthState(auth)
 
   return (
     <div className='App'>
-      <header className='flex justify-between sticky top-0 rounded-b-lg pt-8 bg-zinc-800 '>
-        <h1 className='text-white'>Chat App</h1>
-        <SignOut />
+      <header className='flex justify-between sticky top-0  pt-5 bg-purple-900 '>
+        <h1 className='text-white pt-2 font-mono'>Chat App</h1>
+        <span className='pb-5'><SignOut /> </span>
       </header>
   {user ? <Chat firebase={firebase} firestore={firestore} auth={auth}/> : <SignIn />}
     </div>
